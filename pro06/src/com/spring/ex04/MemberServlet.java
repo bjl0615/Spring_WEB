@@ -85,24 +85,25 @@ public class MemberServlet extends HttpServlet {
   	      String id=request.getParameter("id");
 	      dao.deleteMember(id);
 	      nextPage="/mem4.do?action=listMembers";
-      }
-//      else if(action.equals("searchMember")){
-//          String name=request.getParameter("name");
-//          String email=request.getParameter("email");
-//          memberVO.setName(name);
-//          memberVO.setEmail(email);
-//          List<MemberVO> membersList =dao.searchMember(memberVO);
-//          request.setAttribute("membersList",membersList);
-//          nextPage="test03/listMembers.jsp";
-//       }else if(action.equals("foreachSelect")) {
-//		  List<String> nameList = new ArrayList<String>();
-//		  nameList.add("ȫ�浿");
-//		  nameList.add("������");
-//		  nameList.add("�̼���");
-//		  List<MemberVO> membersList=dao.foreachSelect(nameList);
-//		  request.setAttribute("membersList",membersList);
-//		  nextPage="test03/listMembers.jsp";
-//	   }else if(action.equals("foreachInsert")) {
+      } else if(action.equals("searchMember")){
+          String name=request.getParameter("name");
+          String email=request.getParameter("email");
+          memberVO.setName(name);
+          memberVO.setEmail(email);
+          List<MemberVO> membersList =dao.searchMember(memberVO);
+          request.setAttribute("membersList",membersList);
+          nextPage="test03/listMembers.jsp";
+       }
+      else if(action.equals("foreachSelect")) {
+		  List<String> nameList = new ArrayList<String>();
+		  nameList.add("홍길동");
+		  nameList.add("차범근");
+		  nameList.add("이순신");
+		  List<MemberVO> membersList=dao.foreachSelect(nameList);
+		  request.setAttribute("membersList",membersList);
+		  nextPage="test03/listMembers.jsp";
+	   }
+//		else if(action.equals("foreachInsert")) {
 //          List<MemberVO> memList = new ArrayList<MemberVO>();
 //          memList.add(new MemberVO("m1", "1234", "�ڱ浿", "m1@test.com"));
 //          memList.add(new MemberVO("m2", "1234", "�̱浿", "m2@test.com"));
