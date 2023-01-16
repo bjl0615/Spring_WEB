@@ -1,6 +1,7 @@
 package com.spring.ex02;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -38,4 +39,6 @@ public class MemberDAO {
 		int pwd = session.selectOne("mapper.member.selectPwd");
 		return pwd;
 	}
+
+
 }
