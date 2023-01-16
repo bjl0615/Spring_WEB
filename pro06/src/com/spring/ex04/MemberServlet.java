@@ -81,11 +81,12 @@ public class MemberServlet extends HttpServlet {
           dao.updateMember(memberVO);
           nextPage="/mem4.do?action=listMembers";     
       }
-//      else if(action.equals("deleteMember")){
-//  	      String id=request.getParameter("id");
-//	      dao.deleteMember(id);
-//	      nextPage="/mem4.do?action=listMembers";
-//      }else if(action.equals("searchMember")){
+      else if(action.equals("deleteMember")){
+  	      String id=request.getParameter("id");
+	      dao.deleteMember(id);
+	      nextPage="/mem4.do?action=listMembers";
+      }
+//      else if(action.equals("searchMember")){
 //          String name=request.getParameter("name");
 //          String email=request.getParameter("email");
 //          memberVO.setName(name);
