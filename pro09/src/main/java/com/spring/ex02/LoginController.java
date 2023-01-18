@@ -78,18 +78,29 @@ public class LoginController {
 //		return mav;
 //	}
 	
-	@RequestMapping(value = "/test/login3.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView login3(@RequestParam Map<String, String> info,
+//	@RequestMapping(value = "/test/login3.do", method = { RequestMethod.GET, RequestMethod.POST })
+//	public ModelAndView login3(@RequestParam Map<String, String> info,
+//			                   HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		request.setCharacterEncoding("utf-8");
+//		ModelAndView mav = new ModelAndView();
+//		
+//		String userID = info.get("userID");
+//		String userName = info.get("userName");
+//		System.out.println("userID: "+userID);
+//		System.out.println("userName: "+userName);
+//		
+//		mav.addObject("info", info);
+//		mav.setViewName("result");
+//		return mav;
+//	}
+	
+	@RequestMapping(value = "/test/login4.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView login4(@ModelAttribute("info") LoginVO loginVO,
 			                   HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		ModelAndView mav = new ModelAndView();
-		
-		String userID = info.get("userID");
-		String userName = info.get("userName");
-		System.out.println("userID: "+userID);
-		System.out.println("userName: "+userName);
-		
-		mav.addObject("info", info);
+		System.out.println("userID: "+loginVO.getUserID());
+		System.out.println("userName: "+loginVO.getUserName());
 		mav.setViewName("result");
 		return mav;
 	}
