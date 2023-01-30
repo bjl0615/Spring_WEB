@@ -27,7 +27,7 @@
       ]]>
 	</select>
     
-     <insert id="insertMember"  parameterType="memberVO">
+  <insert id="insertMember"  parameterType="memberVO">
 		<![CDATA[
 		 insert into t_member(id,pwd, name, email)
 		 values(#{id}, #{pwd}, #{name}, #{email})
